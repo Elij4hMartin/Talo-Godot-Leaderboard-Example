@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cwf15vituwjrq"]
 
-[ext_resource type="PackedScene" uid="uid://ng3d42i0wjaq" path="res://leaderboard_example/Scenes/submit_entry_menu.tscn" id="1_d4r0h"]
-[ext_resource type="Script" uid="uid://ciyshxucnsi7e" path="res://leaderboard_example/Scripts/leaderboard_menu.gd" id="1_yy7ac"]
-[ext_resource type="PackedScene" uid="uid://blreheoexoliv" path="res://leaderboard_example/Scenes/view_entries_menu.tscn" id="2_yy7ac"]
-[ext_resource type="PackedScene" uid="uid://cnlehvxlygyej" path="res://leaderboard_example/Scenes/admin_submit_entry_menu.tscn" id="4_botcy"]
+[ext_resource type="PackedScene" uid="uid://ng3d42i0wjaq" path="res://leaderboard_example/scenes/submit_entry_menu.tscn" id="1_d4r0h"]
+[ext_resource type="Script" uid="uid://ciyshxucnsi7e" path="res://leaderboard_example/scripts/leaderboard_menu.gd" id="1_yy7ac"]
+[ext_resource type="PackedScene" uid="uid://blreheoexoliv" path="res://leaderboard_example/scenes/view_entries_menu.tscn" id="2_yy7ac"]
+[ext_resource type="PackedScene" uid="uid://cnlehvxlygyej" path="res://leaderboard_example/scenes/admin_submit_entry_menu.tscn" id="4_botcy"]
 
 [node name="LeaderboardMenu" type="Control"]
 layout_mode = 3
@@ -15,7 +15,6 @@ grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_yy7ac")
 internal_leaderboard_name = "My Scores"
-menu_state = 2
 
 [node name="SubmitEntryMenu" parent="." instance=ExtResource("1_d4r0h")]
 layout_mode = 1

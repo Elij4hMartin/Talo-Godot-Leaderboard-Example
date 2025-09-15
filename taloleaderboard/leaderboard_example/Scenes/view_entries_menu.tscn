@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://blreheoexoliv"]
 
-[ext_resource type="Script" uid="uid://bnk2ecmdtxrtv" path="res://leaderboard_example/Scripts/view_entries_menu.gd" id="1_g483r"]
+[ext_resource type="Script" uid="uid://bnk2ecmdtxrtv" path="res://leaderboard_example/scripts/view_entries_menu.gd" id="1_g483r"]
 
 [node name="ViewEntriesMenu" type="Control"]
 layout_mode = 3

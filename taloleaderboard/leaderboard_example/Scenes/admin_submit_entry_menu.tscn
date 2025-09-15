@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cnlehvxlygyej"]
 
-[ext_resource type="Script" uid="uid://c01etev8dfnwy" path="res://leaderboard_example/Scripts/admin_submit_entry_menu.gd" id="1_bst4m"]
+[ext_resource type="Script" uid="uid://c01etev8dfnwy" path="res://leaderboard_example/scripts/admin_submit_entry_menu.gd" id="1_bst4m"]
 
 [node name="AdminSubmitEntryMenu" type="Control"]
 layout_mode = 3
