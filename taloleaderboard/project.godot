@@ -11,14 +11,13 @@ config_version=5
 [application]
 
 config/name="TaloLeaderboard"
-run/main_scene="uid://bgcyy0oukb7dp"
+run/main_scene="uid://cwf15vituwjrq"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://b0abtkxfquf8n"
 
 [autoload]
 
 Talo="*res://addons/talo/talo_manager.gd"
-LeaderboardVariables="*res://LeaderboardVariables.gd"
 
 [editor_plugins]
 

@@ -1,15 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgcyy0oukb7dp"]
+[gd_scene load_steps=2 format=3 uid="uid://cnlehvxlygyej"]
 
-[ext_resource type="Script" uid="uid://dp26g0jys2ghd" path="res://leaderboard_example/submit_entry.gd" id="1_r36hg"]
+[ext_resource type="Script" uid="uid://c01etev8dfnwy" path="res://leaderboard_example/Scripts/admin_submit_entry_menu.gd" id="1_bst4m"]
 
-[node name="Control" type="Control"]
+[node name="AdminSubmitEntryMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_r36hg")
+script = ExtResource("1_bst4m")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -41,14 +41,28 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Leaderboard: [{leaderboard}] Score: [{score}] 
+text = "Leaderboard: [{leaderboard}]
 Enter your name:"
 
 [node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Player Name"
-placeholder_text = "Anonymous"
+
+[node name="CheckButton" type="CheckButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+button_pressed = true
+text = "Score (Int/Float)"
+
+[node name="ScoreEdit" type="LineEdit" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "1.0"
+placeholder_text = "1.0"
+
+[node name="ScoreLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Score {score}"
 
 [node name="Submit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -65,5 +79,7 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "[   Quit   ]"
 
+[connection signal="toggled" from="MarginContainer/VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="text_changed" from="MarginContainer/VBoxContainer/ScoreEdit" to="." method="_on_score_edit_text_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Submit" to="." method="_on_submit_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
