@@ -41,8 +41,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Leaderboard: [{leaderboard}] Score: [{score}] 
-Enter your name:"
+text = "Leaderboard: [{leaderboard}] Score: [{score}] "
 
 [node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

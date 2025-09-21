@@ -15,13 +15,12 @@ grow_vertical = 2
 size_flags_horizontal = 4
 script = ExtResource("1_yy7ac")
 internal_leaderboard_name = "My Scores"
-menu_state = 0
 
 [node name="SubmitEntryMenu" parent="." instance=ExtResource("1_d4r0h")]
-visible = false
 layout_mode = 1
 
 [node name="ViewEntriesMenu" parent="." instance=ExtResource("2_yy7ac")]
+visible = false
 layout_mode = 1
 
 [node name="AdminSubmitEntryMenu" parent="." instance=ExtResource("4_botcy")]
