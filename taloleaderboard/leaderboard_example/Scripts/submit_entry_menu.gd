@@ -1,17 +1,25 @@
 extends Control
 
+@export var score_is_float : bool = false
 @onready var leaderboard_menu: Control = $".."
 @onready var submit: Button = $MarginContainer/VBoxContainer/Submit
 @onready var label: Label = $MarginContainer/VBoxContainer/Label
 @onready var line_edit: LineEdit = $MarginContainer/VBoxContainer/LineEdit
-@onready var score := RandomNumberGenerator.new().randi_range(0, 100)
-var is_float = true
+var score = 0
 
 func _ready() -> void:
+	score = generate_score()
 	label.text = label.text.replace("{score}", str(score))
 	label.text = label.text.replace("{leaderboard}", leaderboard_menu.internal_leaderboard_name)
-	line_edit.text = "Player Name"
+	line_edit.text = "PlayerName"
 	submit.disabled = false
+
+func generate_score() -> Variant:
+	# Replace with your project's highscore calculation
+	if score_is_float:
+		return RandomNumberGenerator.new().randf_range(0.0, 100.0)
+	else:
+		return RandomNumberGenerator.new().randi_range(0, 100)
 
 func _on_submit_pressed() -> void:
 	submit.disabled = true

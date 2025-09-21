@@ -12,7 +12,7 @@ var is_float = true
 
 func _ready() -> void:
 	label.text = label.text.replace("{leaderboard}", leaderboard_menu.internal_leaderboard_name)
-	line_edit.text = "Player Name"
+	line_edit.text = "PlayerName"
 	submit.disabled = false
 	_update_score()
 

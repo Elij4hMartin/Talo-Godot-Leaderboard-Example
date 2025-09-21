@@ -47,7 +47,7 @@ Enter your name:"
 [node name="LineEdit" type="LineEdit" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
-text = "Player Name"
+text = "PlayerName"
 
 [node name="Submit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
