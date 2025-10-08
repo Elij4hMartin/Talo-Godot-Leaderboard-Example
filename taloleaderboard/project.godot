@@ -12,7 +12,7 @@ config_version=5
 
 config/name="TaloLeaderboard"
 run/main_scene="uid://cwf15vituwjrq"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://b0abtkxfquf8n"
 
 [autoload]

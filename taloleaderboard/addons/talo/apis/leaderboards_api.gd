@@ -21,8 +21,8 @@ func get_cached_entries_for_current_player(internal_name: String) -> Array[TaloL
 			return entry.player_alias.id == Talo.current_alias.id
 	)
 
-## Get a list of entries for a leaderboard. The options include "page", "alias_id", "include_archived", "prop_key" and "prop_value" for additional filtering.
-func get_entries(internal_name: String, options = GetEntriesOptions.new()) -> EntriesPage:
+## Get a list of entries for a leaderboard. The options include "page", "alias_id", "include_archived", "prop_key", "prop_value", "start_date" and "end_date" for additional filtering.
+func get_entries(internal_name: String, options := GetEntriesOptions.new()) -> EntriesPage:
 	var url := "/%s/entries?page=%s"
 	var url_data := [internal_name, options.page]
 
@@ -41,6 +41,14 @@ func get_entries(internal_name: String, options = GetEntriesOptions.new()) -> En
 			url += "&propValue=%s"
 			url_data.append(options.prop_value)
 
+	if options.start_date != "":
+		url += "&startDate=%s"
+		url_data.append(options.start_date)
+
+	if options.end_date != "":
+		url += "&endDate=%s"
+		url_data.append(options.end_date)
+
 	var res := await client.make_request(HTTPClient.METHOD_GET, url % url_data)
 
 	match res.status:
@@ -56,7 +64,7 @@ func get_entries(internal_name: String, options = GetEntriesOptions.new()) -> En
 		_:
 			return null
 
-func get_entries_for_current_player(internal_name: String, options = GetEntriesOptions.new()) -> EntriesPage:
+func get_entries_for_current_player(internal_name: String, options := GetEntriesOptions.new()) -> EntriesPage:
 	if Talo.identity_check() != OK:
 		return null
 
@@ -109,3 +117,5 @@ class GetEntriesOptions:
 	var include_archived: bool = false
 	var prop_key: String = ""
 	var prop_value: String = ""
+	var start_date: String = ""
+	var end_date: String = ""

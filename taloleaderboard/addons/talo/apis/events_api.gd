@@ -79,3 +79,10 @@ func flush() -> void:
 	if _flush_attempted_during_lock:
 		_flush_attempted_during_lock = false
 		await flush()
+
+## Clear the queue of events waiting to be flushed.
+func clear_queue() -> void:
+	_queue.clear()
+	_events_to_flush.clear()
+	_lock_flushes = false
+	_flush_attempted_during_lock = false
